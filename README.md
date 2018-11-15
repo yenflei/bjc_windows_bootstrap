@@ -7,7 +7,7 @@ It is based on Anthony Grees' cookbook https://github.com/anthonygrees/bjc_windo
 ## Requirements
 There are 2 items that need to be updated before the Cookbook can run.
 
-### 1. .kitchen.yml
+### 1. Edit .kitchen.yml
 Update the AWS SG and Subnet
 
 ```bash
@@ -15,6 +15,6 @@ Update the AWS SG and Subnet
   subnet_id: subnet-9x999999
 ```
 
-### 2. validator.pem
+### 2. Reset validator.pem
 Log on to the Chef Server in the BJC and reset the ORG validator and update the file under recipes.
 Future:  use validator-less method to bootstrap client
