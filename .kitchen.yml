@@ -1,0 +1,45 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: bagio-oregon
+  region: us-west-2
+  security_group_ids: sg-00b3accb51ed61e92
+  subnet_id: subnet-0f1c75a12be86607a
+  associate_public_ip: true
+  instance_type: m3.medium ##t2.micro
+  tags:
+    # Replace YOURNAME and YOURCOMPANY here
+    Name: "Chef  Node for <CM>, tbagio"
+    user: Administrator
+    X-Contact: "Tio Bagio"
+    X-Application: "apac"
+    X-Dept: "sales"
+    X-Customer: "tbagio"
+    X-Project: "BJC-Demo"
+    X-Termination-Date: "2018-07-20T12:04:30Z"
+    X-TTL: 4
+
+transport:
+    username: administrator
+    ssh_key:  ~\.ssh\id_rsa
+    communicator: winrm
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+  format: documentation
+
+platforms:
+  - name: windows-2012r2
+
+suites:
+  - name: default
+    run_list:
+      - recipe[bjc_windows_bootstrap::default]
+      #- recipe[bjc_windows_bootstrap::myiis]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
