@@ -1,8 +1,8 @@
-x=$(curl -s http://169.254.169.254/)
-if [ $? -gt 0 ]; then
-        echo '[ERROR] Command not valid outside EC2 instance. Please run this command within a running EC2 instance.'
-        exit 1
-fi
+#x=$(curl -s http://169.254.169.254/)
+#if ( $? -gt 0 ) {
+#        Write-Host '[ERROR] Command not valid outside EC2 instance. Please run this command within a running EC2 instance.'
+#        exit 1
+#}
 
 $mac = (Invoke-WebRequest -Uri http://169.254.169.254/latest/meta-data/mac -UseBasicParsing).Content
 $sg = (Invoke-WebRequest -Uri http://169.254.169.254/latest/meta-data/network/interfaces/macs/$mac/security-group-ids -UseBasicParsing).Content
