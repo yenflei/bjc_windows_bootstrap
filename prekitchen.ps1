@@ -22,3 +22,5 @@ driver:
     subnet_id: $mysubnet
 "
 Set-Content -Path .\\.kitchen.local.yml $entries
+
+#knife  client reregister automate-validator -f recipes\validator.pem
