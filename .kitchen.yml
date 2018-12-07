@@ -1,7 +1,7 @@
 ---
 driver:
   name: ec2
-  aws_ssh_key_id: bagio-oregon
+  aws_ssh_key_id: chef_demo_2x  #bagio-oregon  if region is ireleand
   region: us-west-2
   security_group_ids: sg-00b3accb51ed61e92
   subnet_id: subnet-0f1c75a12be86607a
