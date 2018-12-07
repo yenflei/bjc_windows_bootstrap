@@ -23,4 +23,5 @@ driver:
 "
 Set-Content -Path .\\.kitchen.local.yml $entries
 
-#knife  client reregister automate-validator -f recipes\validator.pem
+Write-Host "reset validator key"
+knife  client reregister automate-validator -f recipes\validator.pem
