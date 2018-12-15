@@ -23,5 +23,6 @@ driver:
 "
 Set-Content -Path .\\.kitchen.local.yml $entries
 
+# reset org validator key on chef server
 Write-Host "reset validator key"
 knife  client reregister automate-validator -f recipes\validator.pem
